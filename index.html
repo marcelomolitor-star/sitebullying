@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bullying e Violência Psicológica: Quando vira crime?</title>
+<meta name="description" content="Site educativo sobre bullying, cyberbullying, violência psicológica, crimes relacionados e canais de denúncia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070b13;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.11);
+  --text:#f5f7fb;--muted:#b8c2d5;--red:#ff4d6d;--orange:#ff9f1c;
+  --yellow:#ffd166;--blue:#4cc9f0;--shadow:0 30px 70px rgba(0,0,0,.32);
+  --container:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,sans-serif;
+  background:radial-gradient(circle at 12% 0%,rgba(255,77,109,.14),transparent 26%),
+  radial-gradient(circle at 92% 8%,rgba(76,201,240,.12),transparent 24%),
+  linear-gradient(180deg,#05070d 0%,#070b13 100%);
+  color:var(--text);line-height:1.65;overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}.container{width:min(100% - 32px,var(--container));margin:auto}
+.site-header{position:fixed;inset:0 0 auto 0;z-index:1000;background:rgba(5,8,15,.78);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
+.header-inner{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{display:flex;align-items:center;gap:14px;font-weight:900;letter-spacing:-.04em;font-size:1.18rem}
+.logo-mark{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--red),var(--orange));color:#fff}
+.nav{display:flex;gap:22px;color:var(--muted);font-weight:700;font-size:.94rem}.nav a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;border-radius:999px;font-weight:900;border:1px solid transparent;transition:.25s}
+.btn:hover{transform:translateY(-2px)}.btn-primary{background:linear-gradient(135deg,var(--red),var(--orange));color:#fff}.btn-outline{background:rgba(255,255,255,.05);color:#fff;border-color:var(--line)}
+.menu-btn{display:none;width:48px;height:48px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;font-size:22px}
+.mobile-panel{position:fixed;inset:0;display:none;z-index:1200;background:rgba(3,6,12,.72);backdrop-filter:blur(8px)}
+.mobile-panel.open{display:block}.mobile-menu{position:absolute;top:0;right:0;width:min(88vw,370px);height:100%;padding:96px 22px 28px;background:#0a101c;border-left:1px solid var(--line);display:grid;align-content:start;gap:12px}
+.mobile-menu a{padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid var(--line);font-weight:800}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,7,13,.94),rgba(8,12,22,.82),rgba(8,12,22,.50)),radial-gradient(circle at 20% 20%,rgba(255,77,109,.25),transparent 30%),url('https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;transform:scale(1.03)}
+.hero-inner{position:relative;z-index:1;padding:136px 0 80px;max-width:930px}
+.kicker{display:inline-flex;gap:10px;padding:10px 18px;margin-bottom:22px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);color:#dbe5f6;font-size:.82rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+h1{font-family:"Cormorant Garamond",serif;font-size:clamp(4rem,7vw,7.1rem);line-height:.88;letter-spacing:-.055em;font-weight:700;max-width:980px}.accent{color:var(--yellow)}
+.hero-text{margin-top:24px;max-width:790px;color:#dbe3f0;font-size:1.1rem;line-height:1.95}.hero-actions{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px}
+.hero-stats{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:880px}
+.stat{padding:22px;border-radius:22px;background:rgba(255,255,255,.075);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(12px)}
+.stat strong{display:block;font-size:1.35rem;font-weight:900}.stat span{display:block;margin-top:8px;color:#cbd6e8;font-size:.95rem}
+section{padding:96px 0}.section-alt{background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,0));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.section-head{max-width:980px;margin-bottom:44px}.section-tag{display:inline-block;margin-bottom:14px;color:var(--yellow);font-size:.8rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase}
+.section-title{font-family:"Cormorant Garamond",serif;font-size:clamp(2.7rem,5vw,4.9rem);line-height:.96;letter-spacing:-.045em;font-weight:700}.section-subtitle{margin-top:18px;color:var(--muted);line-height:1.95;font-size:1.05rem}
+.grid{display:grid;gap:24px}.grid-2{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:repeat(3,1fr)}
+.card{padding:32px;border-radius:30px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.045));border:1px solid var(--line);box-shadow:var(--shadow);transition:.25s}.card:hover{transform:translateY(-5px);border-color:rgba(255,209,102,.24)}
+.icon{width:62px;height:62px;border-radius:20px;display:grid;place-items:center;margin-bottom:22px;background:rgba(255,77,109,.14);font-size:1.55rem;border:1px solid rgba(255,77,109,.18)}
+.card h3{font-size:1.55rem;line-height:1.08;letter-spacing:-.04em;font-weight:900}.card p,.card li{margin-top:13px;color:var(--muted);line-height:1.85}.card ul{padding-left:20px;margin-top:10px}
+.badge{display:inline-flex;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--yellow);font-size:.78rem;font-weight:900;letter-spacing:.10em;text-transform:uppercase;margin-bottom:18px}
+.timeline{display:grid;gap:18px}.timeline-item{display:grid;grid-template-columns:80px 1fr;gap:18px;padding:24px;border-radius:26px;background:rgba(255,255,255,.055);border:1px solid var(--line);box-shadow:var(--shadow)}
+.number{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,var(--red),var(--orange));color:#fff;font-weight:900;font-size:1.15rem}
+.timeline-item h3{font-size:1.45rem;font-weight:900;letter-spacing:-.035em}.timeline-item p{margin-top:8px;color:var(--muted);line-height:1.85}
+.impact-box{padding:40px;border-radius:34px;background:linear-gradient(135deg,rgba(255,77,109,.16),rgba(76,201,240,.12)),rgba(255,255,255,.04);border:1px solid var(--line);box-shadow:var(--shadow)}
+.impact-box h2{font-family:"Cormorant Garamond",serif;font-size:clamp(2.5rem,5vw,4.7rem);line-height:.95}.impact-box p{margin-top:18px;max-width:920px;color:#dbe3f0;line-height:1.95;font-size:1.05rem}
+.contact-card{border-left:4px solid var(--yellow)}.footer{background:rgba(2,5,10,.78);border-top:1px solid var(--line);padding:36px 0 46px;color:var(--muted)}.footer-inner{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(24px);transition:.75s}.reveal.active{opacity:1;transform:translateY(0)}
+@media(max-width:1120px){.grid-3{grid-template-columns:repeat(2,1fr)}}@media(max-width:860px){.nav,.header-inner>.btn{display:none}.menu-btn{display:grid;place-items:center}.hero-stats,.grid-2,.grid-3{grid-template-columns:1fr}.hero-inner{padding:122px 0 64px}section{padding:76px 0}.timeline-item{grid-template-columns:1fr}.card,.impact-box{padding:26px}}@media(max-width:540px){h1{font-size:3.55rem}.hero-actions .btn{width:100%}}
+</style>
+
+<style>
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.link-card {
+  padding: 28px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.045));
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.link-card h3 {
+  font-size: 1.35rem;
+  line-height: 1.1;
+  letter-spacing: -.04em;
+  font-weight: 900;
+}
+.link-card p {
+  margin-top: 12px;
+  color: var(--muted);
+  line-height: 1.85;
+}
+.link-card a {
+  display: inline-flex;
+  margin-top: 16px;
+  color: var(--yellow);
+  font-weight: 900;
+  word-break: break-word;
+}
+.link-label {
+  display: inline-flex;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid var(--line);
+  color: var(--yellow);
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+@media(max-width:860px){
+  .links-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#inicio" class="logo"><span class="logo-mark">⚠️</span><span>Bullying: Quando vira crime?</span></a>
+    <nav class="nav"><a href="#conceito">Conceito</a><a href="#crime">Quando vira crime</a><a href="#tipos">Crimes</a><a href="#casos-reais">Casos reais</a><a href="#estatisticas">Estatísticas</a><a href="#denuncie">Denúncia</a><a href="#canais-links">Canais</a></nav>
+    <a href="#denuncie" class="btn btn-primary">Buscar ajuda</a>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel" onclick="if(event.target===this) closeMenu()">
+  <nav class="mobile-menu">
+    <a href="#inicio" onclick="closeMenu()">Início</a>
+    <a href="#conceito" onclick="closeMenu()">Conceito</a>
+    <a href="#crime" onclick="closeMenu()">Quando vira crime</a>
+    <a href="#tipos" onclick="closeMenu()">Crimes</a>
+    <a href="#denuncie" onclick="closeMenu()">Denúncia</a><a href="#canais-links" onclick="closeMenu()">Canais</a>
+    
+  </nav>
+</div>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="container"><div class="hero-inner">
+    <span class="kicker">violência psicológica • bullying • cyberbullying</span>
+    <h1>Quando a “brincadeira” vira <span class="accent">violência</span>.</h1>
+    <p class="hero-text">Um site educativo para explicar, de forma direta e impactante, o que é bullying, quando ele deixa de ser “zoeira” e passa a atingir a dignidade, a saúde emocional e até a esfera criminal.</p>
+    <div class="hero-actions"><a href="#crime" class="btn btn-primary">Entender quando vira crime</a><a href="#denuncie" class="btn btn-outline">Onde denunciar</a></div>
+    <div class="hero-stats">
+      <div class="stat"><strong>Lei 14.811/2024</strong><span>incluiu bullying e cyberbullying no Código Penal</span></div>
+      <div class="stat"><strong>Disque 100</strong><span>canal nacional para violações de direitos humanos</span></div>
+      <div class="stat"><strong>Internet</strong><span>prints, perfis falsos e exposição também podem gerar responsabilidade</span></div>
+    </div>
+  </div></div>
+</section>
+
+<section id="conceito"><div class="container">
+  <div class="section-head reveal"><span class="section-tag">Conceito</span><h2 class="section-title">Bullying não é conflito isolado. É agressão repetida.</h2><p class="section-subtitle">Bullying é uma prática de intimidação, humilhação ou agressão repetida, geralmente marcada por desequilíbrio de força, exposição da vítima e tentativa de inferiorização.</p></div>
+  <div class="grid grid-3">
+    <article class="card reveal"><div class="icon">🔁</div><h3>Repetição</h3><p>Não é apenas uma discussão pontual. O bullying costuma ocorrer de forma insistente, criando medo, vergonha e sofrimento.</p></article>
+    <article class="card reveal"><div class="icon">🧠</div><h3>Dano emocional</h3><p>A vítima pode desenvolver ansiedade, isolamento, queda no rendimento escolar, insegurança e sofrimento psicológico.</p></article>
+    <article class="card reveal"><div class="icon">📱</div><h3>Exposição digital</h3><p>No cyberbullying, a violência ganha velocidade: prints, memes, grupos, perfis falsos e mensagens podem multiplicar o dano.</p></article>
+  </div>
+</div></section>
+
+<section class="section-alt" id="crime"><div class="container">
+  <div class="section-head reveal"><span class="section-tag">Quando vira crime?</span><h2 class="section-title">A linha vermelha aparece quando há humilhação, ameaça, perseguição ou dano à dignidade.</h2><p class="section-subtitle">A Lei nº 14.811/2024 incluiu bullying e cyberbullying no Código Penal. Dependendo do caso, a conduta também pode se encaixar em injúria, difamação, calúnia, ameaça ou perseguição.</p></div>
+  <div class="timeline">
+    <div class="timeline-item reveal"><div class="number">1</div><div><h3>Brincadeira saudável</h3><p>Todos se divertem, ninguém é humilhado, não há exposição nem repetição ofensiva.</p></div></div>
+    <div class="timeline-item reveal"><div class="number">2</div><div><h3>Conflito</h3><p>Pode existir discussão ou desentendimento, mas sem perseguição contínua ou humilhação pública.</p></div></div>
+    <div class="timeline-item reveal"><div class="number">3</div><div><h3>Bullying</h3><p>A agressão passa a ser repetida, intencional, humilhante e capaz de causar sofrimento.</p></div></div>
+    <div class="timeline-item reveal"><div class="number">4</div><div><h3>Crime</h3><p>Quando há intimidação sistemática, ameaça, ofensa à honra, perseguição, exposição íntima ou violência psicológica relevante.</p></div></div>
+  </div>
+</div></section>
+
+<section id="tipos"><div class="container">
+  <div class="section-head reveal"><span class="section-tag">Crimes relacionados</span><h2 class="section-title">Entenda as diferenças.</h2><p class="section-subtitle">Nem toda ofensa recebe o mesmo nome jurídico. A diferença está no conteúdo da fala, na intenção, no meio utilizado e no dano causado.</p></div>
+  <div class="grid grid-3">
+    <article class="card reveal"><span class="badge">Injúria</span><h3>Ofensa direta à dignidade</h3><p>Quando alguém xinga ou atinge diretamente a honra subjetiva da vítima.</p></article>
+    <article class="card reveal"><span class="badge">Difamação</span><h3>Fato ofensivo à reputação</h3><p>Quando alguém espalha fato ofensivo sobre outra pessoa, atingindo sua imagem perante os outros.</p></article>
+    <article class="card reveal"><span class="badge">Calúnia</span><h3>Acusar falsamente de crime</h3><p>É dizer falsamente que alguém cometeu um crime.</p></article>
+    <article class="card reveal"><span class="badge">Ameaça</span><h3>Promessa de mal injusto</h3><p>Quando a vítima é intimidada com frases como “vou te pegar” ou “vou acabar com você”.</p></article>
+    <article class="card reveal"><span class="badge">Perseguição</span><h3>Stalking</h3><p>Conduta repetida de perseguir, vigiar, insistir ou perturbar a liberdade e a tranquilidade da vítima.</p></article>
+    <article class="card reveal"><span class="badge">Cyberbullying</span><h3>Violência pela internet</h3><p>Exposição, humilhação, intimidação ou perseguição por redes sociais, grupos, mensagens, perfis falsos ou memes.</p></article>
+  </div>
+</div></section>
+
+<section class="section-alt" id="impacto"><div class="container">
+  <div class="impact-box reveal"><span class="section-tag">Impacto</span><h2>“Era só brincadeira” não apaga o sofrimento de quem foi ferido.</h2><p>Palavras repetidas, apelidos humilhantes, exclusão, exposição digital e ameaças podem destruir a autoestima de uma pessoa. O mais importante é reconhecer os sinais, interromper a violência e procurar ajuda.</p><div class="hero-actions"><a href="#denuncie" class="btn btn-primary">Ver canais de ajuda</a></div></div>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+<section class="section-alt" id="casos-reais">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">Casos reais</span>
+      <h2 class="section-title">Histórias que chocaram o Brasil e o mundo.</h2>
+      <p class="section-subtitle">
+        Casos de violência psicológica, cyberbullying e humilhação pública demonstram que o problema pode gerar consequências devastadoras para vítimas, famílias e comunidades inteiras.
+      </p>
+    </div>
+
+    <div class="grid grid-3">
+      <article class="card reveal">
+        <span class="badge">Canadá</span>
+        <h3>O caso Amanda Todd</h3>
+        <p>
+          Amanda Todd, adolescente canadense de 15 anos, sofreu anos de perseguição virtual após ser chantageada por um homem na internet. Mesmo mudando de escola e cidade, continuou sendo exposta e humilhada online, desenvolvendo depressão, ansiedade e isolamento. Um mês antes de morrer, publicou um vídeo pedindo ajuda silenciosamente através de cartazes.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <span class="badge">Brasil • 2011</span>
+        <h3>Massacre de Realengo</h3>
+        <p>
+          O ataque ocorrido na Escola Municipal Tasso da Silveira, no Rio de Janeiro, deixou 12 estudantes mortos. Investigações apontaram que o autor do atentado carregava traumas relacionados às humilhações e ao bullying sofrido durante a infância escolar.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <span class="badge">Brasil • 2017</span>
+        <h3>Colégio Goyases</h3>
+        <p>
+          Em Goiânia, um estudante de 14 anos matou dois colegas e feriu outros após sofrer piadas e apelidos constantes relacionados à aparência e higiene pessoal, segundo relatos de colegas e investigações.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="estatisticas">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">Estatísticas</span>
+      <h2 class="section-title">Os números mostram que o problema é real.</h2>
+      <p class="section-subtitle">
+        Dados recentes demonstram o crescimento do bullying e do cyberbullying no Brasil, especialmente entre adolescentes e no ambiente digital.
+      </p>
+    </div>
+
+    <div class="grid grid-4">
+      <article class="card reveal">
+        <div class="icon">📊</div>
+        <h3>39,8%</h3>
+        <p>dos estudantes brasileiros de 13 a 17 anos afirmam já ter sofrido bullying na escola.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="icon">🔁</div>
+        <h3>27,2%</h3>
+        <p>relatam sofrer bullying de forma recorrente, segundo dados do IBGE.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="icon">👧</div>
+        <h3>Meninas</h3>
+        <p>são as maiores vítimas no ambiente escolar e também no cyberbullying.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="icon">⚖️</div>
+        <h3>+100x</h3>
+        <p>foi o crescimento de processos judiciais envolvendo bullying nos últimos anos.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt" id="leis">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">Legislação</span>
+      <h2 class="section-title">O que diz a lei brasileira?</h2>
+      <p class="section-subtitle">
+        O Brasil possui legislação específica para prevenção, conscientização e punição de práticas de bullying e cyberbullying.
+      </p>
+    </div>
+
+    <div class="grid grid-2">
+      <article class="card reveal">
+        <span class="badge">Lei nº 13.185/2015</span>
+        <h3>Lei do Bullying</h3>
+        <p>
+          Instituiu o Programa de Combate à Intimidação Sistemática, determinando medidas de conscientização, prevenção e combate ao bullying em escolas e instituições.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <span class="badge">Lei nº 14.811/2024</span>
+        <h3>Criminalização</h3>
+        <p>
+          O bullying e o cyberbullying passaram a constar no Código Penal brasileiro. O cyberbullying pode gerar pena de reclusão de 2 a 4 anos, além de multa.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="denuncie"><div class="container">
+  <div class="section-head reveal"><span class="section-tag">Onde denunciar?</span><h2 class="section-title">Não normalize. Registre, procure ajuda e denuncie.</h2><p class="section-subtitle">Em casos de risco, ameaça, perseguição, exposição íntima, violência ou sofrimento intenso, procure um adulto de confiança, a escola, o Conselho Tutelar, a Polícia Civil ou os canais oficiais.</p></div>
+  <div class="grid grid-3">
+    <article class="card contact-card reveal"><div class="icon">☎️</div><h3>Disque 100</h3><p>Canal nacional para denúncias de violações de direitos humanos, incluindo situações envolvendo crianças e adolescentes. Funciona 24 horas.</p></article>
+    <article class="card contact-card reveal"><div class="icon">🛡️</div><h3>SaferNet Brasil</h3><p>Recebe denúncias anônimas de crimes e violações contra Direitos Humanos na internet e oferece orientação em segurança digital.</p></article>
+    <article class="card contact-card reveal"><div class="icon">👮</div><h3>Polícia Civil</h3><p>Em caso de crime, ameaça, perseguição, perfil falso, exposição íntima ou agressão grave, procure a delegacia mais próxima.</p></article>
+  </div>
+</div></section>
+
+<section class="section-alt" id="canais-links">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">Canais e links</span>
+      <h2 class="section-title">Onde buscar ajuda, orientação e base legal.</h2>
+      <p class="section-subtitle">
+        Reúna provas, salve prints, procure um adulto de confiança e utilize canais oficiais para denúncia, orientação e proteção, especialmente quando envolver crianças e adolescentes.
+      </p>
+    </div>
+
+    <div class="links-grid">
+      <article class="link-card reveal">
+        <span class="link-label">Polícia Civil do Paraná</span>
+        <h3>Núcleo de Combate aos Cibercrimes — NUCIBER</h3>
+        <p>Canal da Polícia Civil do Paraná voltado ao combate de crimes praticados em ambiente digital.</p>
+        <a href="https://www.policiacivil.pr.gov.br/NUCIBER" target="_blank" rel="noopener">Acessar NUCIBER</a>
+      </article>
+
+      <article class="link-card reveal">
+        <span class="link-label">Boletim de ocorrência</span>
+        <h3>Registrar ocorrência de cibercrime pela PCPR</h3>
+        <p>Orientação para registro de ocorrência relacionada a crimes virtuais pela página da Polícia Civil do Paraná.</p>
+        <a href="https://www.policiacivil.pr.gov.br/registrarOcorrencia" target="_blank" rel="noopener">Registrar ocorrência</a>
+      </article>
+
+      <article class="link-card reveal">
+        <span class="link-label">Proteção infantojuvenil</span>
+        <h3>Conselhos Tutelares do Paraná</h3>
+        <p>O Conselho Tutelar atua na proteção de crianças e adolescentes até os 18 anos incompletos, com base no Estatuto da Criança e do Adolescente.</p>
+        <a href="https://www.desenvolvimentosocial.pr.gov.br/Pagina/Conselhos-Tutelares-do-Parana" target="_blank" rel="noopener">Ver Conselhos Tutelares do Paraná</a>
+      </article>
+
+      <article class="link-card reveal">
+        <span class="link-label">Campo Mourão</span>
+        <h3>Conselho Tutelar de Campo Mourão</h3>
+        <p>Canal local para orientação e encaminhamento de situações envolvendo crianças e adolescentes.</p>
+        <a href="https://www.facebook.com/ctcampomourao/?locale=pt_BR" target="_blank" rel="noopener">Acessar página do Conselho Tutelar</a>
+      </article>
+
+      <article class="link-card reveal">
+        <span class="link-label">ECA</span>
+        <h3>Estatuto da Criança e do Adolescente — Lei nº 8.069/1990</h3>
+        <p>Lei que dispõe sobre a proteção integral da criança e do adolescente no Brasil.</p>
+        <a href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm" target="_blank" rel="noopener">Consultar o ECA</a>
+      </article>
+
+      <article class="link-card reveal">
+        <span class="link-label">Segurança digital</span>
+        <h3>SaferNet Brasil</h3>
+        <p>Organização que recebe denúncias de crimes e violações de direitos humanos na internet e oferece orientação para vítimas.</p>
+        <a href="https://new.safernet.org.br/" target="_blank" rel="noopener">Acessar SaferNet</a>
+      </article>
+
+      <article class="link-card reveal">
+        <span class="link-label">Lei do Bullying</span>
+        <h3>Lei nº 13.185/2015</h3>
+        <p>Institui o Programa de Combate à Intimidação Sistemática, conhecido como Lei do Bullying.</p>
+        <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13185.htm" target="_blank" rel="noopener">Consultar Lei nº 13.185/2015</a>
+      </article>
+
+      <article class="link-card reveal">
+        <span class="link-label">Criminalização</span>
+        <h3>Lei nº 14.811/2024 — bullying e cyberbullying</h3>
+        <p>Institui medidas de proteção contra violência em estabelecimentos educacionais e altera o Código Penal para incluir bullying e cyberbullying.</p>
+        <a href="https://www.in.gov.br/en/web/dou/-/lei-n-14.811-de-12-de-janeiro-de-2024-537300944" target="_blank" rel="noopener">Consultar Lei nº 14.811/2024</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="fontes"><div class="container">
+  <div class="section-head reveal"><span class="section-tag">Referências</span><h2 class="section-title">Fontes oficiais usadas no conteúdo.</h2><p class="section-subtitle">Lei nº 14.811/2024; informações do Disque 100; SaferNet Brasil; orientações públicas sobre denúncias de crimes digitais.</p></div>
+  <div class="grid grid-2">
+    <article class="card reveal"><h3>Base legal</h3><p>Lei nº 14.811/2024 — institui medidas de proteção à criança e ao adolescente contra a violência em estabelecimentos educacionais e inclui bullying e cyberbullying no Código Penal.</p></article>
+    <article class="card reveal"><h3>Proteção e denúncia</h3><p>Disque 100, SaferNet Brasil e Polícia Civil são canais importantes para orientação, denúncia e encaminhamento de casos graves.</p></article>
+  </div>
+</div></section>
+</main>
+
+<footer class="footer"><div class="container footer-inner"><div><strong>Violência Psicológica e Bullying</strong><br>Conteúdo educativo para apresentação escolar.</div><div>Em caso de risco imediato, procure ajuda de um adulto, escola ou autoridade competente.</div></div></footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobilePanel').classList.toggle('open')}
+function closeMenu(){document.getElementById('mobilePanel').classList.remove('open')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()})
+const reveals=document.querySelectorAll('.reveal');
+function revealOnScroll(){reveals.forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight-80)el.classList.add('active')})}
+window.addEventListener('scroll',revealOnScroll);revealOnScroll();
+</script>
+</body>
+</html>
